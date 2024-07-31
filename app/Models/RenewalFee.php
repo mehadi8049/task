@@ -14,6 +14,11 @@ class RenewalFee extends Model
         'from_year',
         'to_year',
         'amount',
-        'previous_year_rule',
+        'formula',
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(RenewalFee::class, 'parent_id', 'id');
+    }
 }

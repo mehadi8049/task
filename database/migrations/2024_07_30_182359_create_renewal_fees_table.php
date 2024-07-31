@@ -19,7 +19,8 @@ class CreateRenewalFeesTable extends Migration
             $table->string('from_year');
             $table->string('to_year');
             $table->float('amount',8,2);
-            $table->string('previous_year_rule');
+            $table->string('formula');
+            $table->foreignId('parent_id')->nullable();
             $table->timestamps();
         });
     }
